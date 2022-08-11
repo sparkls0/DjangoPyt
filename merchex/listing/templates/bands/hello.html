@@ -1,8 +1,6 @@
-# listings/templates/listings/hello.html
+{% extends 'listings/base.html' %}
 
-<html>
-    <head><title>Merchex</title></head>
-    <body>
+{% block content %}
         <h1>Hello Django !</h1>
         <p>Mes groupes préférés sont :
         <ul>
@@ -23,7 +21,5 @@
                 groupes préférés.
         </p>
             
-        
-            
-    </body>
-</html>
+
+{% endblock %}
