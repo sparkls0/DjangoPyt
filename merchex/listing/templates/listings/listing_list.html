@@ -6,13 +6,15 @@
 
 <p>Mes groupes préférés sont :</p>
 
-<ul>
+<div class="container">
     {% for listing in listings %}
-        <li>
+        <div>
             <a href ="{% url 'listing-detail' listing.id %}"> {{ listing.name }} </a>
-        </li>
+            
+            <h2> <i class="fa-solid fa-check"></i> </h2> 
+        </div>
     {% endfor %}
-</ul>
+</div>
 
 {% endblock %}
 

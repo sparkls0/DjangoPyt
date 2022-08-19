@@ -3,12 +3,18 @@
 {% block content %}
         <h1>Hello Django !</h1>
         <p>Mes groupes préférés sont :
-
-        <ul>
-            {% for band in bands %}        
-                <li><a href ="{% url 'band-detail' band.id %}"> {{ band.name }} </a> </li>          
+        <div class="bands">
+            {% for band in bands %}
+                <div class="band">
+                    <a href ="{% url 'band-detail' band.id %}"> {{ band.name }} </a> 
+                    {% if band.active %}
+                    <h2> Active <i class="fa-solid fa-check"></i> </h2> 
+                    {% else %}
+                    <h2> Active : <i class="fa-solid fa-xmark"></i> </h2>
+                    {% endif %}
+                </div>
             {% endfor %}
-        </ul>
+        </div>
         </p>
         <p>
             J'ai..

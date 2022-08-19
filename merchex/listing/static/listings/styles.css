@@ -5,3 +5,20 @@
 .fa-xmark{
     color:red;
 }
+
+.parent{
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+    justify-content: space-between;
+    
+}
+
+.child{
+    border: 2px solid purple;
+    padding:10px;
+    margin:20px 0px;
+    flex: 0 0 30%;
+    position: relative;
+}
+
