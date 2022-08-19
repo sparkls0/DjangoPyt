@@ -1,0 +1,28 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <h1> {{ band.name }} </h1>
+    <h1> {{ band.active }} </h1>
+    <h1> {{ band.get_genre_display }} </h1>
+        
+    {% if band.official_homepage %}
+    
+    <li><a href="{{ band.official_homepage }} "> {{ band.official_homepage }}</a></h1>
+
+    {% endif %}
+
+    {% if band.active %}
+
+        <h2> Active : <i class="fa-solid fa-check"></i> </h2>
+
+    {% else %}
+
+        <h2> Active : <i class="fa-solid fa-xmark"></i> </h2>
+
+    {% endif %}
+
+    <h1><a href="{% url 'band-list' %}"><i class="fa-solid fa-arrow-left"></i></a></h1>
+            
+
+{% endblock %}

@@ -9,7 +9,7 @@
 <ul>
     {% for listing in listings %}
         <li>
-            {{ listing.name }}
+            <a href ="{% url 'listing-detail' listing.id %}"> {{ listing.name }} </a>
         </li>
     {% endfor %}
 </ul>

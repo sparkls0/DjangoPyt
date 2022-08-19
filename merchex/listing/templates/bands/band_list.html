@@ -3,9 +3,10 @@
 {% block content %}
         <h1>Hello Django !</h1>
         <p>Mes groupes préférés sont :
+
         <ul>
-            {% for band in bands%}        
-                <li> {{ band.name|upper }} </li>          
+            {% for band in bands %}        
+                <li><a href ="{% url 'band-detail' band.id %}"> {{ band.name }} </a> </li>          
             {% endfor %}
         </ul>
         </p>

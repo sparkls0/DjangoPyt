@@ -3,8 +3,18 @@
 <html>
     <head>
         <title>Merchex</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'listings/ tyles.css' %}" />
+        
+        <link rel="stylesheet" href="/static/listings/styles.css?{% now "U" %}"/>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
+    <nav>
+        <ul>
+            <li> <a href="{% url 'band-list' %}">Groups</a> </li> 
+            <li> <a href="{% url 'listing-list'%}"> Listings </a> </li>
+        </ul>
+      </nav>
     <h1> ah </h1>
     <body>
 
