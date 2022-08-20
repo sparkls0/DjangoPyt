@@ -2,16 +2,16 @@
 
 {% block content %}
 
-<h1>Hello Django !</h1>
+<h1 style="text-align:center"> Hello Django !</h1>
 
-<p>Mes groupes préférés sont :</p>
+<p style= "text-align:center"> Mes groupes préférés sont :</p>
 
-<div class="container">
+<div class="parent">
     {% for listing in listings %}
-        <div>
+        <div class="child">
             <a href ="{% url 'listing-detail' listing.id %}"> {{ listing.name }} </a>
             
-            <h2> <i class="fa-solid fa-check"></i> </h2> 
+            <h2> Sold : <i class="fa-solid fa-check"></i> </h2> 
         </div>
     {% endfor %}
 </div>

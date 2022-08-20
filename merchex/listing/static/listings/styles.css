@@ -25,7 +25,7 @@ nav{
     color:red;
 }
 
-.bands{
+.parent{
     display:flex;
     flex-wrap:wrap;
     width:100%;
@@ -33,7 +33,7 @@ nav{
     
 }
 
-.band{
+.child{
     border: 2px solid purple;
     border-radius : 1em;
     padding:10px;

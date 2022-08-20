@@ -5,9 +5,9 @@
 
         <h1 class="band-list-title"> Hello Django !</h1>
         <p class="band-list-text"> Mes groupes préférés sont :
-        <div class="bands">
+        <div class="parent">
             {% for band in bands %}
-                <div class="band">
+                <div class="child">
                     <a href ="{% url 'band-detail' band.id %}"> {{ band.name }} </a> 
                     {% if band.active %}
                     <h2> Active <i class="fa-solid fa-check"></i> </h2> 

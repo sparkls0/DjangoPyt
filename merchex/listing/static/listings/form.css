@@ -20,17 +20,29 @@
     width:8%;
     margin: 2% auto;
     padding:10px;
+    color:white;
+    background-color:black;
+    border:2px solid white;
+    border-radius: 6px;
+    box-shadow: 0 5px white;
     
 }
 .submit-button:hover{
     cursor:pointer;
+    background-color:#cbb27c
+}
+
+.submit-button:active{
+    background-color:#cbb27c;
+    box-shadow: 0 1px #cbb27c;
+    transform: translateY(4px);
 }
 
 .contact-form-message{
     border-radius : 6px;
     width : 40%;
     margin: 0px 30px;
-    padding:70px;
+    height:100px;
 }
 
 .errorlist > li {
