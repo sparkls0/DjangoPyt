@@ -1,0 +1,24 @@
+.form {
+    display:flex;
+    width:100%;
+    flex-direction: column;
+}
+
+
+.form-fieldsd{
+    border: 2px solid purple;
+    border-radius : 1em;
+    width : 50%;
+
+}
+
+
+.email-sent{
+    border: 3px solid white;
+    background-color:green;
+    color:white;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
