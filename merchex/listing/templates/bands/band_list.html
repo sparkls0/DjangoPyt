@@ -1,8 +1,10 @@
 {% extends 'listings/base.html' %}
 
 {% block content %}
-        <h1>Hello Django !</h1>
-        <p>Mes groupes préférés sont :
+
+
+        <h1 class="band-list-title"> Hello Django !</h1>
+        <p class="band-list-text"> Mes groupes préférés sont :
         <div class="bands">
             {% for band in bands %}
                 <div class="band">
