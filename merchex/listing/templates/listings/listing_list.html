@@ -6,6 +6,11 @@
 
 <p style= "text-align:center"> Mes groupes préférés sont :</p>
 
+
+<h3 style="text-align:center; margin-top: 40px"> 
+    <a href="{% url 'listing-create' %}"> Add <i class="fa-solid fa-plus"></i> </a> 
+</h3>
+
 <div class="parent">
     {% for listing in listings %}
         <div class="child">

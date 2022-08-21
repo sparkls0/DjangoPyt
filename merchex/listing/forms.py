@@ -1,5 +1,6 @@
 from django import forms
 
+from listing.models import Band, Listing
 
 class ContactUsForm(forms.Form):
     
@@ -9,8 +10,19 @@ class ContactUsForm(forms.Form):
     message = forms.CharField(max_length=1000, widget=forms.Textarea(attrs={'class': 'contact-form-message', 'rows': 3 }))
     
     
+
+class BandForm(forms.ModelForm):
+    class Meta:
+        model = Band
+        fields = '__all__'
+        
+class ListingForm(forms.ModelForm):
     
-    
+    class Meta:
+        model = Listing
+        fields = '__all__'
+          
+
     
     
     

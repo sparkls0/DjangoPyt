@@ -9,7 +9,7 @@
     justify-content:center;
 }
 
-.contact-form-input{
+.contact-form-input,.form-add-input{
     border-radius : 6px;
     width : 40%;
     margin: 0px 30px;
