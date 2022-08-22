@@ -1,0 +1,20 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <h1 style="text-align:center;margin-bottom:40px"> Modifier votre groupe! </h1>
+
+
+    <div class = "band-update">
+        <form action = "" method="post" class="form">
+
+            {% csrf_token %}
+            {{ form.as_p }} 
+            <input type = "submit" value="Envoyer" class="submit-button">
+
+        </form>
+    </div>
+
+{% endblock %}
+
+
