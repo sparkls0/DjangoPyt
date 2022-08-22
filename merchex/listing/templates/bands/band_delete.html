@@ -1,0 +1,27 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+    <h1 style="text-align:center;margin-bottom:40px"> DELETE </h1>
+    <h3 style="text-align:center"> Are you sure you want to delete {{ band.name }} ? </h3> 
+
+    <div class="delete-page-buttons">
+        <form action = "" method="post">
+
+            {% csrf_token %}
+            {{ form.as_p }} 
+            <input type = "submit" value="Supprimer" class="delete-button">
+        </form>
+
+        <a href="{% url 'band-list' %}">
+            <input type="button" value= "Actually no" class="neutral-button"> 
+        </a>
+
+    </div>
+        
+
+{% endblock %}
+
+
+
+
