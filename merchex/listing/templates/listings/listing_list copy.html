@@ -1,0 +1,33 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h1 style="text-align:center"> Hello Django !</h1>
+
+<p style= "text-align:center"> Mes groupes préférés sont :</p>
+
+
+<h3 style="text-align:center; margin-top: 40px"> 
+    <a href="{% url 'listing-create' %}"> Add <i class="fa-solid fa-plus"></i> </a> 
+</h3>
+
+<div class="parent">
+    {% for listing in listings %}
+        <div class="child">
+            <a href ="{% url 'listing-detail' listing.id %}"> {{ listing.name }} </a>
+            
+            {% if listing.sold %}
+                    
+                <h2> Active <i class="fa-solid fa-check"></i> </h2> 
+            {% else %}
+                    
+                <h2> Active : <i class="fa-solid fa-circle-xmark"></i> </h2>
+
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
+

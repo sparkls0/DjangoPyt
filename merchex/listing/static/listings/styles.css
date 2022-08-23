@@ -22,6 +22,10 @@ nav{
     color:red;
 }
 
+.white{
+    color:white;
+}
+
 .band-list-title, .band-list-text{
     text-align:center;
 }
@@ -43,25 +47,38 @@ nav{
     flex-wrap:wrap;
     width:100%;
     justify-content: space-evenly;
+    height:80%;
     
 }
 
 .child{
     border: 2px solid #cbb27c;
     border-radius : 1em;
-    padding:10px;
-    margin:50px 100px;
-    flex: 0 0 15%;
+    margin:4%;
+    flex: 0 0 20%;
     bottom:0px;
     text-align:center;
-    height: 250px;
+    height: 70%;
     position:relative;
-
+    
 }
 
 .child > a {
     position:relative;
+}
 
+.child > a > img {
+    
+    max-width:100%;
+    max-height:100%;
+}
+
+.homepage{
+
+    position:absolute;
+    bottom:20%;
+    left:28%;
+    
 }
 
 .year-formed{
@@ -78,13 +95,13 @@ nav{
 
 .edit{
     position:absolute;
-    bottom:30%;
+    bottom:15%;
     right: 17%;
 }
 
 .delete{
     position:absolute;
-    bottom:30%;
+    bottom:15%;
     left:17%;
     
 }

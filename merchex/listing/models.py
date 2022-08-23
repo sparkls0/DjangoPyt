@@ -26,7 +26,7 @@ class Band(models.Model):
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
     genre = models.fields.CharField(choices=Genre.choices, max_length=5)
-    photo = models.ImageField(storage=fs, null = True, blank=True)
+    url = models.fields.CharField(max_length=200, default='')
     
     
     

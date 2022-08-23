@@ -65,7 +65,7 @@
     margin: 2% auto;
     padding:10px;
     color:white;
-    background-color:BLACk;
+    background-color:black;
     border:2px solid white;
     border-radius: 6px;
     box-shadow: 0 5px white;
@@ -113,3 +113,24 @@
     justify-content: space-evenly;
     margin:5% auto;
 }
+
+.search-bar{
+    border:2px solid white;
+    border-radius:0.5em;
+}
+
+.search-bar > i, input{
+   margin: 0.2em 1em;
+}
+
+.search-bar > input{
+    background-color:black;
+    color:white;
+    border:0;
+    outline:none;
+}
+
+.search-bar > ::placeholder{
+    color:white;
+}
+

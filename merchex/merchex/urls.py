@@ -2,6 +2,7 @@
 from django.contrib import admin
 from django.urls import path
 from listing import views
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -17,8 +18,8 @@ urlpatterns = [
     path('listings/<int:id>/update', views.listing_update, name = 'listing-update'),
     path('contact-us/', views.contact, name = 'contact'),
     path('email-sent/', views.email_sent),
-]
 
+]
 
 
 
