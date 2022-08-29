@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <ul>
+        <li> <a href="{% url 'band-list' %}">Groups</a> </li> 
+        <li> <a href="{% url 'listing-list'%}"> Listings </a> </li>
+        <li> <a href="{% url 'contact'%}"> Contact </a> </li>
+        <li> <a href="{% url 'about'%}"> About us </a> </li>
+        
+        <form action = "{% url 'band-search' %}" method="get">
+            
+            <div class="search-bar">
+                <i style="margin-right:5px" class="fa-solid fa-magnifying-glass white"></i>
+                <input type="text" name="search" placeholder="Search.."> 
+            </div>  
+
+        </form>
+
+    </ul>
+  </nav>

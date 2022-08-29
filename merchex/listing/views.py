@@ -6,9 +6,34 @@ from django.shortcuts import render
 from listing.forms import BandForm, ContactUsForm, ListingForm
 from django.core.mail import send_mail
 from django.shortcuts import redirect
+from django.template.loader import render_to_string
+from django.http import JsonResponse
+
+
 
 def band_list(request):
-    bands = Band.objects.all()
+    
+    ctx = {}
+    url_parameter = request.GET.get("q")
+    
+    if url_parameter:
+        bands = Band.objects.filter(name_icontains=url_parameter)
+    else: 
+        bands = Band.objects.all()
+    
+    ctx['bands'] = bands
+    
+    does_req_accept_json = request.accepts("application/json")
+    is_ajax_request = request.headers.get("x-requested-with") == "XMLHttpRequest"  and does_req_accept_json
+    
+    if is_ajax_request:
+        
+        html = render_to_string(
+            template_name='bands_results.html',  context={"bands" : bands}
+        )
+        data_dict = {'html_from_view': html}
+        return JsonResponse(data=data_dict, safe=False)
+    
     return render(request,
                   'bands/band_list.html',
                   {'bands': bands })
@@ -65,6 +90,43 @@ def band_delete(request, id):
     return render(request,
                   'bands/band_delete.html',
                   {'band' : band})
+    
+    
+def band_search(request):
+    
+    if request.method == 'GET':
+        search = request.GET.get('search')
+        bands = Band.objects.all().filter(name__contains = search)
+        return render(request,
+                      'bands/bands_results.html',
+                      {'bands' : bands})
+    
+
+# ------------>    AJAX SEARCH <-------------------- 
+
+    
+#def band_search(request):
+#    ctx = {}
+#    url_parameter = request.GET.get("q")
+#
+#    if url_parameter:
+#        artists = Artist.objects.filter(name__icontains=url_parameter)
+#    else:
+#        artists = Artist.objects.all()
+#
+#    ctx["artists"] = artists
+#    does_req_accept_json = request.accepts("application/json")
+#    is_ajax_request = request.headers.get("x-requested-with") == "XMLHttpRequest" and does_req_accept_json
+#
+#    if is_ajax_request:
+#    
+#        html = render_to_string(
+#            template_name="artists-results-partial.html", context={"artists": artists}
+#        )
+#        data_dict = {"html_from_view": html}
+#        return JsonResponse(data=data_dict, safe=False)
+#
+#    return render(request, "artists.html", context=ctx) 
     
     
     

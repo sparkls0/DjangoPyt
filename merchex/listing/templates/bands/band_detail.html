@@ -1,9 +1,8 @@
-{% extends 'listings/base.html' %}
+{% extends 'main/base.html' %}
 
 {% block content %}
 
     <h1> {{ band.name }} </h1>
-    <h1> {{ band.active }} </h1>
     <h1> {{ band.get_genre_display }} </h1>
         
     {% if band.official_homepage %}
