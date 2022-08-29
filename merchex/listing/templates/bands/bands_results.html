@@ -1,43 +1,49 @@
-{% if bands %}
-    
-    <div class="parent">
-        {% for band in bands %}
-            <div class="child">
-                <h3 class="name">
-                    <a href ="{% url 'band-detail' band.id %}"> {{ band.name }} </a> 
-                </h3>
-                    
-                    <a class="picture" href ="{% url 'band-detail' band.id %}"><img src="/static/pictures/{{ band.url }}" alt={{ band.name }}> </a>
+{% extends 'main/base.html' %}
 
-                <h4 class = "homepage">
-                    <a href="{{ band.official_homepage }}" target="_blank" rel="noopener noreferrer"> 
-                        Learn More <i class="fa-solid fa-arrow-up-right-from-square gold"></i>
-                    </a>
-                </h4>
+
+{% block content %}
+    {% if bands %}
+        
+        <div class="parent">
+            {% for band in bands %}
+                <div class="child">
+                    <h3 class="name">
+                        <a href ="{% url 'band-detail' band.id %}"> {{ band.name }} </a> 
+                    </h3>
+                        
+                        <a class="picture" href ="{% url 'band-detail' band.id %}"><img src="/static/pictures/{{ band.url }}" alt={{ band.name }}> </a>
+
+                    <h4 class = "homepage">
+                        <a href="{{ band.official_homepage }}" target="_blank" rel="noopener noreferrer"> 
+                            Learn More <i class="fa-solid fa-arrow-up-right-from-square gold"></i>
+                        </a>
+                    </h4>
+                    
+                    <h5>
+                        <a href="{% url 'band-update' band.id %}"> <i class="fa-solid fa-pen-to-square gold edit medium-size-icon"></i> </a>
+                    </h5>
+
+                    <h5>
+                        <a href="{% url 'band-delete' band.id %}"> <i class="fa-solid fa-trash-can delete red medium-size-icon"></i> </a>
+                    <h5>
                 
-                <h5>
-                    <a href="{% url 'band-update' band.id %}"> <i class="fa-solid fa-pen-to-square gold edit medium-size-icon"></i> </a>
-                </h5>
+                    <div class="">
+                        
+                        <h2 class="year-formed"> {{ band.year_formed }} </h2>
 
-                <h5>
-                    <a href="{% url 'band-delete' band.id %}"> <i class="fa-solid fa-trash-can delete red medium-size-icon"></i> </a>
-                <h5>
-            
-                <div class="">
+                        {% if band.active %}
                     
-                    <h2 class="year-formed"> {{ band.year_formed }} </h2>
-
-                    {% if band.active %}
-                
-                        <h3 class="active"> Active &nbsp <i class="fa-solid fa-check medium-size-icon"></i> </h3> 
-                    {% else %}
-                    
-                        <h3 class="active"> Active &nbsp <i class="fa-solid fa-xmark red medium-size-icon"></i> </h3>
-                    {% endif %}
+                            <h3 class="active"> Active &nbsp <i class="fa-solid fa-check medium-size-icon"></i> </h3> 
+                        {% else %}
+                        
+                            <h3 class="active"> Active &nbsp <i class="fa-solid fa-xmark red medium-size-icon"></i> </h3>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
-    </div>
+            {% endfor %}
+        </div>
 
 
-{% endif %}
+    {% endif %}
+
+{% endblock %}
