@@ -1,3 +1,11 @@
+@import url('styles.css');
+
+:root{
+    --primary-color:#cbb27c;
+    --errors : red; margin-bottom:-40px; text-align:center;
+    --borderradius : 6px;
+}
+
 .form {
     display:flex;
     width:100%;
@@ -10,7 +18,7 @@
 }
 
 .contact-form-input,.form-add-input{
-    border-radius : 6px;
+    border-radius : var(--borderradius);
     width : 40%;
     margin: 0px 30px;
 
@@ -23,7 +31,7 @@
     color:white;
     background-color:black;
     border:2px solid white;
-    border-radius: 6px;
+    border-radius: var(--borderradius);
     box-shadow: 0 5px white;
     
 }
@@ -45,7 +53,7 @@
     color:white;
     background-color:red;
     border:2px solid white;
-    border-radius: 6px;
+    border-radius: var(--borderradius);
     box-shadow: 0 5px white;
     
 }
@@ -67,7 +75,7 @@
     color:white;
     background-color:black;
     border:2px solid white;
-    border-radius: 6px;
+    border-radius: var(--borderradius);
     box-shadow: 0 5px white;
     
 }
@@ -85,7 +93,7 @@
 
 
 .contact-form-message{
-    border-radius : 6px;
+    border-radius : var(--borderradius);
     width : 40%;
     margin: 0px 30px;
     height:100px;
@@ -95,6 +103,12 @@
     color:red;
     margin-bottom:-40px;
     text-align:center;
+}
+
+.alert{
+    color:red;
+    text-align: center;
+    margin-bottom:-40px;
 }
 
 
@@ -134,3 +148,38 @@
     color:white;
 }
 
+.search-bar > input:focus{
+    border-color:#cbb27c;
+}
+
+.log{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+
+.form-fields{
+    display:flex;
+    flex-direction: column;
+    margin:0 auto;
+}
+
+.sign-in, .sign-up{
+    margin: 0 auto;
+
+}
+
+.log > form {
+    border: 2px solid #cbb27c;
+    border-radius:var(--borderradius);
+    padding: 5%;
+    position:relative;
+
+
+}
+
+.title-log{
+    text-align: center;
+    position: absolute;
+    top:0;
+}

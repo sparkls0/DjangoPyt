@@ -4,6 +4,9 @@
 
 {% block content %}
 
+        {% if user.is_authenticated %}
+                <h4> Hey {{ user.get_username}} </h4>
+        {% endif %}
 
         <h1 class="band-list-title"> Hello Django !</h1>
         <p class="band-list-text"> Mes groupes préférés sont :

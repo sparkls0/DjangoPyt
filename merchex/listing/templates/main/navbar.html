@@ -14,5 +14,13 @@
 
         </form>
 
+        {% if user.is_authenticated %}
+            <i class="fa-solid fa-user gold"></i> <a class="red" href="{% url 'logout-user' %}"> DISCONNECT </a>
+        {% else %}
+
+            <a href="{% url 'login-user'%}"> Sign-in / Sign-up </a>
+
+        {% endif %}
+
     </ul>
   </nav>

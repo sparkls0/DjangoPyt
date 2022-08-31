@@ -1,0 +1,98 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <div class="log"> 
+
+		                        <!-- LOGIN -->
+
+		
+		<form action="login_user" method="post" class="form-horizontal">
+			{% csrf_token%}
+
+			<h2 class="title-log"> SIGN IN </h2>
+
+			<div class="sign-in">
+				<div class="form-fields">
+					<label for="username">Username</label>
+					<input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
+				</div>
+				<div class="form-fields">
+					<label for="password">Password</label>
+					<input type="password" class="form-control" name="password" id="password" placeholder="Enter Password">
+				</div>
+				<button type="submit" class="btn btn-primary">SEND</button>
+			</div>
+
+			{% for message in messages %}
+			<div class="alert alert-danger" role="alert">
+				{{message}}
+			</div>
+			{% endfor %}
+
+		</form>
+
+			
+
+
+                         <!-- REGISTER  -->
+        
+        <form action="/accounts/register" method="POST" class="form-horizontal">
+            {% csrf_token%}
+
+                <h2 style="text-align:center;">SIGN UP</h2>
+				<div class="sign-in">
+					<div class="form-fields">
+						<label for="username">Username</label>
+						<input type="text" class="form-control" name="username" id="username" placeholder="Enter Username"
+							Required>
+					</div>
+					<div class="form-fields">
+						<label for="fanme">First Name</label>
+						<input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter First Name"
+							Required>
+					</div>
+					<div class="form-fields">
+						<label for="lname">Last Name</label>
+						<input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Last Name"
+							Required>
+					</div>
+					<div class="form-fields">
+						<label for="email">Email address</label>
+						<input type="email" class="form-control" name="email" id="email" placeholder="Enter email" Required>
+					</div>
+					<div class="form-fields">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" name="password" id="password" placeholder="Enter Password"
+							Required>
+					</div>
+					<div class="form-fields">
+						<label for="confirm_password">Confirm Password</label>
+						<input type="password" class="form-control" name="confirm_password" id="confirm_password"
+							placeholder="Confirm Your Password" Required>
+					</div>
+					<button type="submit" class="btn btn-primary">SEND</button>
+					<a class="btn btn-dark" href="login_user" role="button">LOGIN</a>
+					
+				</div>
+
+				{% for message in messages %}
+				<div class="alert alert-danger" role="alert">
+					{{message}}
+				</div>
+				{% endfor %}
+
+		</form>
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+{% endblock %}
